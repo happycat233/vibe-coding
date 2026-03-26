@@ -2,9 +2,10 @@ import { motion } from 'framer-motion'
 
 interface HeroProps {
   onViewProjects: () => void
+  onContact: () => void
 }
 
-const Hero = ({ onViewProjects }: HeroProps) => {
+const Hero = ({ onViewProjects, onContact }: HeroProps) => {
   return (
     <section className="relative h-full flex items-center justify-center overflow-hidden px-6">
       {/* 背景渐变光晕 */}
@@ -67,12 +68,12 @@ const Hero = ({ onViewProjects }: HeroProps) => {
           >
             查看作品
           </button>
-          <a
-            href="#contact"
-            className="px-8 py-3 rounded-full border border-border text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors"
+          <button
+            onClick={onContact}
+            className="px-8 py-3 rounded-full border border-border text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors cursor-pointer"
           >
             联系我
-          </a>
+          </button>
         </motion.div>
       </div>
 
